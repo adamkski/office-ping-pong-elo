@@ -1,0 +1,23 @@
+games_played <- tribble(
+  ~won, ~def,
+  "Sujoy", "Darren",
+  "Brian", "Gabe",
+  "Shibo", "Sandy",
+  "Darren", "Adam",
+  "Shibo", "Gabe",
+  "Brian", "Adam",
+  "Darren", "Sandy",
+  "Gabe", "Darren",
+  "Sujoy", "Justin",
+  "Sujoy", "Gabe",
+  "Adam", "Justin",
+  "Sujoy", "Adam",
+  "Sujoy", "Justin",
+  "Sujoy", "Adam",
+  "Darren", "Sujoy",
+  "Darren", "Justin",
+  "Sujoy", "Gabe",
+  "Gabe", "Adam",
+  "Gabe", "Adam",
+  "Gabe", "Adam"
+)
