@@ -19,5 +19,22 @@ games_played <- tribble(
   "Sujoy", "Gabe",
   "Gabe", "Adam",
   "Gabe", "Adam",
-  "Gabe", "Adam"
+  "Gabe", "Adam",
+  "Adam", "Steve",
+  "Sujoy", "Adam",
+  "Sujoy", "Steve",
+  "Adam", "Steve",
+  "Darren", "Shibo",
+  "Steve", "Justin",
+  "Sujoy", "Adam",
+  "Sujoy", "Shibo",
+  "Darren", "Steve",
+  "Shibo", "Justin",
+  "Darren", "Adam",
+  "Sujoy", "Steve",
+  "Darren", "Sujoy",
+  "Shibo", "Adam",
+  "Steve", "Shibo",
+  "Darren", "Adam",
+  "Sujoy", "Darren"
 )
