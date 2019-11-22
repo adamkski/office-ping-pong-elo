@@ -16,12 +16,13 @@ players <- bind_rows(games_played %>% select(player = won),
   pull(player)
 
 k <- 32
+
+# compute elo scores
 elo <- tibble(player = players,
               elo_points = 1000,
               games_played = 0)
-
-# compute elo scores
 log <- map2(games_played$won, games_played$def, ~update_elo(.x, .y))
+
 
 scores <- elo %>% 
   group_by(player) %>% 
@@ -34,7 +35,7 @@ scores %>%
   arrange(-elo_points) %>% 
   # select(-games_played) %>% 
   rowid_to_column("rank") %>% 
-  select(-games_played) %>% 
+  #select(-games_played) %>% 
   knitr::kable()
 
 # calculate odds of winning
@@ -75,3 +76,20 @@ calc_scores <- function(){
 
 calc_scores() %>% 
   arrange(-elo_points)
+
+
+# compare to last day
+games_played2 <- games_played
+games_played <- games_played %>% filter(is.na((day)))
+games_played <- games_played2
+
+scores1 <- scores
+
+scores1 %>% 
+  left_join(scores, by = "player") %>% 
+  arrange(-elo_points.y) %>% 
+  select(-contains("games")) %>% 
+  mutate(change = elo_points.y - elo_points.x) %>% 
+  select(player, elo_points = elo_points.y, change) %>% 
+  rowid_to_column("rank") %>%
+  knitr::kable()
