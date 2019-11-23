@@ -23,7 +23,7 @@ elo <- tibble(player = players,
               elo_points = 1000,
               games_played = 0)
 
-log <- map2(games_played2$won, games_played2$def, ~update_elo(.x, .y))
+log <- map2(games_played$won, games_played$def, ~update_elo(.x, .y))
 
 
 scores <- elo %>% 
